@@ -1,38 +1,11 @@
 package dev.mbo.springkotlinjpa
 
-import jakarta.persistence.Column
 import jakarta.persistence.MappedSuperclass
-import jakarta.persistence.PrePersist
-import jakarta.persistence.PreUpdate
-import jakarta.persistence.Version
 import org.springframework.data.util.ProxyUtils
 import java.io.Serializable
-import java.time.Instant
 
 @MappedSuperclass
-abstract class AbstractEntity<T : Serializable>(
-
-    @field:Column(name = "created_at", nullable = false, updatable = false)
-    var createdAt: Instant? = null,
-
-    @field:Column(name = "updated_at", insertable = false)
-    var updatedAt: Instant? = null,
-
-    @field:Version
-    @field:Column(name = "lock_version", nullable = false)
-    var lockVersion: Int? = null
-
-) : Identifiable<T> {
-
-    @PrePersist
-    protected fun prePersist() {
-        this.createdAt = Instant.now()
-    }
-
-    @PreUpdate
-    protected fun preUpdate() {
-        this.updatedAt = Instant.now()
-    }
+abstract class AbstractEntity<T : Serializable> : Identifiable<T> {
 
     /**
      * id only check for jpa entity

@@ -4,7 +4,7 @@ import jakarta.persistence.OptimisticLockException
 
 object LockVersionComparator {
 
-    fun compare(entity: AbstractEntity<*>, version: Int) {
+    fun compare(entity: AbstractMutableEntity<*>, version: Int) {
         if (entity.lockVersion != version) {
             throw OptimisticLockException("entity ${entity.getIdentifier()} has lockVersion ${entity.lockVersion} which is not equal to $version")
         }
