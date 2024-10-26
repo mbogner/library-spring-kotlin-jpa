@@ -7,9 +7,8 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.data.jpa.repository.JpaRepository
 import java.io.Serializable
 
-@Suppress("unused")
+@Suppress("unused", "MemberVisibilityCanBePrivate")
 abstract class AbstractDomainService<ID : Serializable, ENTITY : AbstractEntity<ID>>(
-    @Suppress("MemberVisibilityCanBePrivate")
     protected val repository: JpaRepository<ENTITY, ID>
 ) {
 
