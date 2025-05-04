@@ -8,8 +8,8 @@ class LockVersionComparatorTest {
 
     private class TestEntity(
         var id: Int? = null,
-        lockVersion: Int? = null,
-    ) : AbstractMutableEntity<Int>(
+        lockVersion: Int = 0,
+    ) : AbstractVersionedMutableEntity<Int>(
         lockVersion = lockVersion,
     ) {
 
