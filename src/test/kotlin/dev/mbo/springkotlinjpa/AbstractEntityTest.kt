@@ -39,10 +39,6 @@ open class AbstractEntityTest @Autowired constructor(
         override fun getIdentifier(): Int? {
             return id
         }
-
-        override fun setIdentifier(id: Int?) {
-            this.id = id
-        }
     }
 
 }
