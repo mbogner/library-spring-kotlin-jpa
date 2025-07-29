@@ -28,8 +28,6 @@ open class AbstractEntityTest @Autowired constructor(
     fun testIdentifier() {
         val entity = BaseEntity(id = 1)
         assertThat(entity.id).isEqualTo(1)
-        entity.setIdentifier(null)
-        assertThat(entity.id).isNull()
     }
 
     @Entity

@@ -10,7 +10,7 @@ abstract class AbstractVersionedMutableEntity<T : Serializable>(
 
     @field:Version
     @field:Column(name = "lock_version", nullable = false)
-    var lockVersion: Int = 0
+    open var lockVersion: Int = 0
 
 ) : AbstractMutableEntity<T>() {
 

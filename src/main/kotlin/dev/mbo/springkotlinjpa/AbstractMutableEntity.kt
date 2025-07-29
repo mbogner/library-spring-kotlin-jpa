@@ -9,7 +9,7 @@ import java.time.Instant
 abstract class AbstractMutableEntity<T : Serializable>(
 
     @field:Column(name = "updated_at", nullable = false)
-    var updatedAt: Instant = Instant.now()
+    open var updatedAt: Instant = Instant.now()
 
 ) : AbstractImmutableEntity<T>(
     createdAt = updatedAt,

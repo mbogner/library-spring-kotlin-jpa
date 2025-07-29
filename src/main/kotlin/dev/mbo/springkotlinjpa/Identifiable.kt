@@ -10,6 +10,4 @@ interface Identifiable<T : Serializable> : Serializable {
     @JsonIgnore
     fun getIdentifier(): T?
 
-    fun setIdentifier(id: T?)
-
 }
